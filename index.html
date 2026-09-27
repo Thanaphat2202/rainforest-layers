@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โครงสร้างชั้นชีวอมของป่าฝนเขตร้อน (Rainforest Layers)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            font-family: 'Kanit', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Glassmorphism card effect */
+        .glass-card {
+            background: rgba(18, 38, 28, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09150f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1b4332;
+            border-radius: 4px;
+        }
+
+        /* Floating background elements animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-15px) rotate(10deg); opacity: 0.7; }
+            100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
+        }
+
+        .floating-leaf {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-leaf-slow {
+            animation: float 9s ease-in-out infinite 2s;
+        }
+
+        /* Ambient Glow effects for depth */
+        .bg-glow-sun {
+            background: radial-gradient(circle at 50% 0%, rgba(245, 158, 11, 0.25) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        .bg-glow-earth {
+            background: radial-gradient(circle at 50% 100%, rgba(120, 53, 15, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+    </style>
+</head>
+<body class="bg-[#07110c] text-emerald-100 min-h-screen relative overflow-x-hidden selection:bg-emerald-500 selection:text-white pb-12">
+
+    <!-- Background Ambient Glows -->
+    <div class="fixed inset-0 bg-glow-sun pointer-events-none z-0"></div>
+    <div class="fixed inset-0 bg-glow-earth pointer-events-none z-0"></div>
+
+    <!-- Floating Background Leaves for Aesthetic Vibe -->
+    <div class="fixed top-12 left-[10%] text-amber-400/20 text-3xl pointer-events-none floating-leaf z-0">🍃</div>
+    <div class="fixed top-1/3 right-[8%] text-emerald-400/20 text-4xl pointer-events-none floating-leaf-slow z-0">🌿</div>
+    <div class="fixed bottom-1/4 left-[5%] text-teal-400/20 text-3xl pointer-events-none floating-leaf z-0">🌱</div>
+
+    <!-- Container for Mobile-First Display -->
+    <div class="max-w-md md:max-w-2xl mx-auto px-4 pt-6 pb-8 relative z-10">
+
+        <!-- Header / Hero Section -->
+        <header class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-300 text-xs font-medium mb-3 shadow-lg backdrop-blur-md">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <i class="fa-solid fa-qrcode text-emerald-400"></i> สแกนรับชมข้อมูลเรียนรู้
+            </div>
+            
+            <h1 class="text-2xl md:text-4xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-emerald-200 to-teal-300 mb-2 leading-tight">
+                โครงสร้างชั้นชีวอม<br class="block sm:hidden">ของป่าฝนเขตร้อน
+            </h1>
+            <p class="text-xs md:text-sm text-emerald-300/70 max-w-xs md:max-w-md mx-auto font-light">
+                (Tropical Rainforest Layers) — สำรวจความหลากหลายของระบบนิเวศตั้งแต่ยอดไม้สูงถึงพื้นดิน
+            </p>
+        </header>
+
+        <!-- Layers Container (Top to Bottom Visual Flow) -->
+        <div class="relative space-y-5">
+            <!-- Vertical Connecting Light Guide Line -->
+            <div class="absolute left-6 top-8 bottom-8 w-0.5 bg-gradient-to-b from-amber-400 via-emerald-500 via-teal-600 to-amber-800 opacity-40 z-0"></div>
+
+            <!-- 1. Emergent Layer -->
+            <div class="glass-card rounded-2xl p-5 relative overflow-hidden transition-all duration-300 hover:scale-[1.02] border-l-4 border-l-amber-400 group">
+                <!-- Decorative Subtle Background Icon -->
+                <i class="fa-solid fa-sun absolute -right-3 -bottom-3 text-7xl text-amber-400/5 group-hover:text-amber-400/10 transition-colors"></i>
+                
+                <div class="flex items-start gap-4 relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-amber-500/20 shrink-0">
+                        ☀️
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1 flex-wrap gap-1">
+                            <h2 class="text-lg font-bold text-amber-300 flex items-center gap-2">
+                                1. Emergent layer
+                            </h2>
+                            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/30 font-light">
+                                แสงแดดจัด
+                            </span>
+                        </div>
+                        <p class="text-xs text-amber-200/60 font-medium mb-2">ชั้นเหนือเรือนยอด</p>
+                        <p class="text-sm text-emerald-100/90 font-light leading-relaxed mb-3">
+                            ต้นไม้สูงมาก ยอดไม้โดดเดี่ยวโผล่พ้นเรือนยอดขึ้นมา รับแสงแดดเต็มที่ ลมแรง อากาศค่อนข้างแห้ง
+                        </p>
+                        
+                        <!-- Wildlife Examples -->
+                        <div class="pt-2 border-t border-amber-500/20 flex items-center gap-2 flex-wrap">
+                            <span class="text-xs text-amber-300/80 font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-paw text-[10px]"></i> ตัวอย่าง:
+                            </span>
+                            <span class="text-xs bg-amber-950/60 text-amber-200 px-2.5 py-1 rounded-lg border border-amber-500/30 inline-flex items-center gap-1">
+                                🦅 นกอินทรี
+                            </span>
+                            <span class="text-xs bg-amber-950/60 text-amber-200 px-2.5 py-1 rounded-lg border border-amber-500/30 inline-flex items-center gap-1">
+                                🦜 นกแก้ว
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Canopy Layer -->
+            <div class="glass-card rounded-2xl p-5 relative overflow-hidden transition-all duration-300 hover:scale-[1.02] border-l-4 border-l-emerald-400 group">
+                <i class="fa-solid fa-tree absolute -right-3 -bottom-3 text-7xl text-emerald-400/5 group-hover:text-emerald-400/10 transition-colors"></i>
+                
+                <div class="flex items-start gap-4 relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-green-600 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-emerald-500/20 shrink-0">
+                        🌿
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1 flex-wrap gap-1">
+                            <h2 class="text-lg font-bold text-emerald-300 flex items-center gap-2">
+                                2. Canopy
+                            </h2>
+                            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-400/10 text-emerald-300 border border-emerald-400/30 font-light">
+                                หนาแน่นที่สุด
+                            </span>
+                        </div>
+                        <p class="text-xs text-emerald-200/60 font-medium mb-2">ชั้นเรือนยอด</p>
+                        <p class="text-sm text-emerald-100/90 font-light leading-relaxed mb-3">
+                            เป็นบริเวณที่มีใบไม้และกิ่งก้านประสานกันหนาแน่น คล้ายหลังคาธรรมชาติ เป็นที่อยู่อาศัยของสิ่งมีชีวิตจำนวนมากที่สุดในป่า
+                        </p>
+                        
+                        <!-- Wildlife Examples -->
+                        <div class="pt-2 border-t border-emerald-500/20 flex items-center gap-2 flex-wrap">
+                            <span class="text-xs text-emerald-300/80 font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-paw text-[10px]"></i> ตัวอย่าง:
+                            </span>
+                            <span class="text-xs bg-emerald-950/60 text-emerald-200 px-2.5 py-1 rounded-lg border border-emerald-500/30 inline-flex items-center gap-1">
+                                🐒 ลิง
+                            </span>
+                            <span class="text-xs bg-emerald-950/60 text-emerald-200 px-2.5 py-1 rounded-lg border border-emerald-500/30 inline-flex items-center gap-1">
+                                🐦 นก
+                            </span>
+                            <span class="text-xs bg-emerald-950/60 text-emerald-200 px-2.5 py-1 rounded-lg border border-emerald-500/30 inline-flex items-center gap-1">
+                                🐿️ กระรอก
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Understory Layer -->
+            <div class="glass-card rounded-2xl p-5 relative overflow-hidden transition-all duration-300 hover:scale-[1.02] border-l-4 border-l-teal-400 group">
+                <i class="fa-solid fa-cloud-rain absolute -right-3 -bottom-3 text-7xl text-teal-400/5 group-hover:text-teal-400/10 transition-colors"></i>
+                
+                <div class="flex items-start gap-4 relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-400 to-cyan-700 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-teal-500/20 shrink-0">
+                        💧
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1 flex-wrap gap-1">
+                            <h2 class="text-lg font-bold text-teal-300 flex items-center gap-2">
+                                3. Understory
+                            </h2>
+                            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-teal-400/10 text-teal-300 border border-teal-400/30 font-light">
+                                สลัว & ชื้น
+                            </span>
+                        </div>
+                        <p class="text-xs text-teal-200/60 font-medium mb-2">ชั้นใต้เรือนยอด</p>
+                        <p class="text-sm text-emerald-100/90 font-light leading-relaxed mb-3">
+                            แสงแดดส่องลงมาได้น้อยมาก (ประมาณ 2-15%) พืชส่วนใหญ่มีใบใหญ่เพื่อรับแสง อากาศค่อนข้างชื้นและลมสงบ
+                        </p>
+                        
+                        <!-- Wildlife Examples -->
+                        <div class="pt-2 border-t border-teal-500/20 flex items-center gap-2 flex-wrap">
+                            <span class="text-xs text-teal-300/80 font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-paw text-[10px]"></i> ตัวอย่าง:
+                            </span>
+                            <span class="text-xs bg-teal-950/60 text-teal-200 px-2.5 py-1 rounded-lg border border-teal-500/30 inline-flex items-center gap-1">
+                                🐍 งู
+                            </span>
+                            <span class="text-xs bg-teal-950/60 text-teal-200 px-2.5 py-1 rounded-lg border border-teal-500/30 inline-flex items-center gap-1">
+                                🐸 กบ
+                            </span>
+                            <span class="text-xs bg-teal-950/60 text-teal-200 px-2.5 py-1 rounded-lg border border-teal-500/30 inline-flex items-center gap-1">
+                                🦋 แมลง
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Forest Floor -->
+            <div class="glass-card rounded-2xl p-5 relative overflow-hidden transition-all duration-300 hover:scale-[1.02] border-l-4 border-l-amber-700 group">
+                <i class="fa-solid fa-mound absolute -right-3 -bottom-3 text-7xl text-amber-700/5 group-hover:text-amber-700/10 transition-colors"></i>
+                
+                <div class="flex items-start gap-4 relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-700 to-amber-900 flex items-center justify-center text-amber-100 font-bold text-xl shadow-lg shadow-amber-900/30 shrink-0">
+                        🍄
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center justify-between mb-1 flex-wrap gap-1">
+                            <h2 class="text-lg font-bold text-amber-400 flex items-center gap-2">
+                                4. Forest floor
+                            </h2>
+                            <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-amber-800/20 text-amber-400 border border-amber-700/40 font-light">
+                                มืดมิด & ย่อยสลาย
+                            </span>
+                        </div>
+                        <p class="text-xs text-amber-300/60 font-medium mb-2">พื้นป่า</p>
+                        <p class="text-sm text-emerald-100/90 font-light leading-relaxed mb-3">
+                            ได้รับแสงแทบไม่ถึง 2% แทบไม่มีพืชขึ้น มีเศษใบไม้และซากสิ่งมีชีวิตทับถมกัน เป็นแหล่งทำงานสำคัญของผู้ย่อยสลาย
+                        </p>
+                        
+                        <!-- Wildlife Examples -->
+                        <div class="pt-2 border-t border-amber-800/30 flex items-center gap-2 flex-wrap">
+                            <span class="text-xs text-amber-400/80 font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-paw text-[10px]"></i> ตัวอย่าง:
+                            </span>
+                            <span class="text-xs bg-amber-950/80 text-amber-300 px-2.5 py-1 rounded-lg border border-amber-800/40 inline-flex items-center gap-1">
+                                🍄 เห็ด
+                            </span>
+                            <span class="text-xs bg-amber-950/80 text-amber-300 px-2.5 py-1 rounded-lg border border-amber-800/40 inline-flex items-center gap-1">
+                                🧫 แบคทีเรีย
+                            </span>
+                            <span class="text-xs bg-amber-950/80 text-amber-300 px-2.5 py-1 rounded-lg border border-amber-800/40 inline-flex items-center gap-1">
+                                🪱 ไส้เดือน
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer / Student Credit Info -->
+        <footer class="mt-8 text-center border-t border-emerald-900/50 pt-6">
+            <div class="inline-block glass-card px-5 py-3 rounded-xl border border-emerald-500/20">
+                <p class="text-xs text-emerald-300/80 font-medium mb-1">
+                    <i class="fa-solid fa-graduation-cap text-emerald-400 mr-1"></i> ชิ้นงานสื่อการเรียนรู้วิทยาศาสตร์
+                </p>
+                <p class="text-[11px] text-emerald-400/60 font-light">
+                    สแกนผ่าน QR Code เพื่อรับชมข้อมูลความรู้ระบบนิเวศ
+                </p>
+            </div>
+            <p class="text-[10px] text-emerald-600 mt-4">
+                © Tropical Rainforest Layers Study Project
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
